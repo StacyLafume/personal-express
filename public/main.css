@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+
+label,
+textarea {
+    font-size: .8rem;
+    letter-spacing: 1px;
+    display: block;
+}
+textarea {
+    padding: 5%;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    transition: background-color 0.2s ease 0s;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+textarea:focus {
+    background: none repeat scroll 0 0 #FFFFFF;
+    outline-width: 0;
+}
+
+figure {
+    border: thin #c0c0c0 solid;
+    display: flex;
+    flex-flow: column;
+    padding: 5px;
+    max-width: 50%;
+    margin: auto;
+}
+
+img {
+    width: 100%;
+}
+
+figcaption {
+    background-color: #222;
+    color: #fff;
+    font: italic smaller sans-serif;
+    padding: 3px;
+    text-align: center;
+}
+
+.green{
+  color: darkgreen;
+}

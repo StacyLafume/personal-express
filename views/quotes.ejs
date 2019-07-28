@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr">
+
+<head>
+  <meta chastrset="utf-8">
+  <title>To Do List</title>
+  <link rel="stylesheet" href="main.css">
+  <link href="https://fonts.googleapis.com/css?family=BioRhyme|Monoton&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+</head>
+
+<body>
+
+
+
+
+  <form action="/random" method="post">
+
+    <button id="click" class="btn btn-default" type="button" name="button">New Image</button>
+
+    <figure>
+      <img id="gif" src="" alt="">
+
+      <figcaption>Get an inspiration!</figcaption>
+    </figure>
+
+    <input id="val" hidden type="text" name="img" value="">
+
+    <label for="story">Tell us a story:</label>
+
+    <textarea id="story" name="story"rows="5" cols="33" placeholder="In A World..." spellcheck="true" autocapitalize="words">
+
+    </textarea>
+
+    <button class="btn btn-default" type="submit" name="button">Save</button>
+
+  </form>
+
+  <main class="col-sm-6">
+
+    <h2>Past Stories</h2>
+
+    <% for(var i=0; i<stories.length; i++) {%>
+      <section>
+
+        <figure>
+
+          <img src="<%= stories[i].image %>" alt="">
+
+        </figure>
+
+        <% let liked = ""
+
+        console.log(stories[i].like)
+
+         if( stories[i].like){
+              liked = "green"
+              console.log(liked)
+        } %>
+        <p class="<%= liked %>"><%= stories[i].passage %></p>
+        
+        <button data-img="<%=stories[i].image %>" data-story="<%=stories[i].passage %>" class="edit btn btn-default" type="button" name="button">Like</button>
+
+        <button data-img="<%=stories[i].image %>" data-story="<%=stories[i].passage %>" class="delete btn btn-default" type="button" name="button">Delete</button>
+
+      </section>
+    <% } %>
+
+  </main>
+
+  <script type="text/javascript" src="api.js"></script>
+
+
+</body>
+
+</html>
